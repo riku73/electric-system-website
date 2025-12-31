@@ -129,10 +129,10 @@ export function TestimonialsSection() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { value: "500+", label: "Clients Satisfaits" },
-            { value: "98%", label: "Taux de Satisfaction" },
-            { value: "24h", label: "Temps de Réponse" },
-            { value: "2 Ans", label: "Garantie Incluse" },
+            { value: "500+", label: "Clients satisfaits" },
+            { value: "98%", label: "Taux de satisfaction" },
+            { value: "24h", label: "Temps de réponse" },
+            { value: "2 ans", label: "Garantie incluse" },
           ].map((stat, index) => (
             <div key={stat.label} className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-[#0D0D0D] mb-2">

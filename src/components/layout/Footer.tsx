@@ -99,7 +99,7 @@ export function Footer() {
 
           {/* Address & Hours */}
           <div className="lg:col-span-3">
-            <h3 className="font-bold text-lg mb-6">Notre Adresse</h3>
+            <h3 className="font-bold text-lg mb-6">Notre adresse</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#FF9502] shrink-0 mt-0.5" />

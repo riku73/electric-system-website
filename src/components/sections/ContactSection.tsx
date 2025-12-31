@@ -333,7 +333,7 @@ export function ContactSection() {
                   className="inline-flex items-center gap-2 font-semibold hover:underline"
                 >
                   <Phone className="w-4 h-4" />
-                  Appeler Maintenant
+                  Appeler maintenant
                 </a>
               </div>
 

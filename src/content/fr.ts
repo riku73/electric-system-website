@@ -21,56 +21,56 @@ export const content = {
   nav: {
     home: "Accueil",
     services: "Services",
-    about: "À Propos",
+    about: "À propos",
     contact: "Contact",
-    cta: "Demander un Devis",
+    cta: "Demander un devis",
   },
 
   hero: {
-    title: "Votre Partenaire Électricien de Confiance au Luxembourg",
+    title: "Votre partenaire électricien de confiance au Luxembourg",
     subtitle:
       "Solutions électriques professionnelles pour particuliers et entreprises. De l'installation photovoltaïque à la domotique, nous réalisons vos projets avec expertise et fiabilité.",
     cta: {
-      primary: "Découvrir Nos Services",
-      secondary: "Nous Contacter",
+      primary: "Découvrir nos services",
+      secondary: "Nous contacter",
     },
     trust: [
       {
-        label: "Expertise Confirmée",
+        label: "Expertise confirmée",
         icon: "Award",
       },
       {
-        label: "Agréé et Certifié",
+        label: "Agréé et certifié",
         icon: "Shield",
       },
       {
-        label: "Devis Gratuit",
+        label: "Devis gratuit",
         icon: "FileCheck",
       },
     ],
   },
 
   services: {
-    title: "Nos Services",
+    title: "Nos services",
     subtitle: "Des solutions électriques complètes pour tous vos besoins",
     items: [
       {
         id: "photovoltaique",
-        title: "Installation Photovoltaïque",
+        title: "Installation photovoltaïque",
         description:
           "Produisez votre propre électricité avec nos panneaux solaires performants. Installation professionnelle et accompagnement pour les aides gouvernementales.",
         icon: "Sun",
       },
       {
         id: "borne-recharge",
-        title: "Bornes de Recharge",
+        title: "Bornes de recharge",
         description:
           "Installation de bornes de recharge pour véhicules électriques. Solutions adaptées pour particuliers, entreprises et copropriétés.",
         icon: "Zap",
       },
       {
         id: "electricite-generale",
-        title: "Électricité Générale",
+        title: "Électricité générale",
         description:
           "Tableaux électriques, circuits, câblage complet. Installation, rénovation et mise aux normes de vos installations électriques.",
         icon: "Wrench",
@@ -91,7 +91,7 @@ export const content = {
       },
       {
         id: "informatique",
-        title: "Infrastructure Informatique",
+        title: "Infrastructure informatique",
         description:
           "Câblage réseau structuré, installation de baies informatiques, connexions fibre optique pour une infrastructure performante.",
         icon: "Network",
@@ -100,7 +100,7 @@ export const content = {
   },
 
   about: {
-    title: "À Propos d'ELECTRIC SYSTEM",
+    title: "À propos d'ELECTRIC SYSTEM",
     subtitle: "Votre électricien de confiance au Luxembourg",
     content: [
       "ELECTRIC SYSTEM Sàrl est votre partenaire de confiance pour tous vos travaux électriques au Luxembourg. Basée à Bertrange, notre entreprise met son expertise au service des particuliers et des professionnels.",
@@ -131,7 +131,7 @@ export const content = {
   },
 
   testimonials: {
-    title: "Ce Que Disent Nos Clients",
+    title: "Ce que disent nos clients",
     subtitle: "La satisfaction de nos clients est notre priorité",
     items: [
       {
@@ -156,7 +156,7 @@ export const content = {
   },
 
   contact: {
-    title: "Contactez-Nous",
+    title: "Contactez-nous",
     subtitle: "Demandez votre devis gratuit et sans engagement",
     form: {
       name: {
@@ -175,12 +175,12 @@ export const content = {
         label: "Service intéressé",
         placeholder: "Sélectionnez un service",
         options: [
-          { value: "photovoltaique", label: "Installation Photovoltaïque" },
-          { value: "borne-recharge", label: "Bornes de Recharge VE" },
-          { value: "electricite-generale", label: "Électricité Générale" },
+          { value: "photovoltaique", label: "Installation photovoltaïque" },
+          { value: "borne-recharge", label: "Bornes de recharge VE" },
+          { value: "electricite-generale", label: "Électricité générale" },
           { value: "domotique", label: "Domotique" },
           { value: "securite", label: "Sécurité" },
-          { value: "informatique", label: "Infrastructure Informatique" },
+          { value: "informatique", label: "Infrastructure informatique" },
           { value: "autre", label: "Autre" },
         ],
       },
@@ -196,7 +196,7 @@ export const content = {
         "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter directement par téléphone.",
     },
     info: {
-      title: "Informations de Contact",
+      title: "Informations de contact",
       address: {
         label: "Adresse",
         icon: "MapPin",
@@ -221,11 +221,11 @@ export const content = {
       "ELECTRIC SYSTEM Sàrl - Votre électricien de confiance au Luxembourg. Installation photovoltaïque, bornes de recharge, domotique et sécurité.",
     sections: {
       services: {
-        title: "Nos Services",
+        title: "Nos services",
         links: [
-          { label: "Installation Photovoltaïque", href: "#services" },
-          { label: "Bornes de Recharge", href: "#services" },
-          { label: "Électricité Générale", href: "#services" },
+          { label: "Installation photovoltaïque", href: "#services" },
+          { label: "Bornes de recharge", href: "#services" },
+          { label: "Électricité générale", href: "#services" },
           { label: "Domotique", href: "#services" },
           { label: "Sécurité", href: "#services" },
         ],
@@ -233,13 +233,13 @@ export const content = {
       company: {
         title: "Entreprise",
         links: [
-          { label: "À Propos", href: "#about" },
-          { label: "Nos Réalisations", href: "#testimonials" },
+          { label: "À propos", href: "#about" },
+          { label: "Nos réalisations", href: "#testimonials" },
           { label: "Contact", href: "#contact" },
         ],
       },
       legal: {
-        title: "Informations Légales",
+        title: "Informations légales",
       },
     },
     copyright: "ELECTRIC SYSTEM Sàrl. Tous droits réservés.",

@@ -54,7 +54,7 @@ export function ServicesSection() {
         >
           <div className="max-w-2xl">
             <span className="text-[#FF9502] font-medium tracking-wide uppercase text-sm mb-4 block">
-              Nos Expertises
+              Nos expertises
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0D0D0D] leading-[1.1] mb-4">
               {content.services.title}
@@ -145,7 +145,7 @@ export function ServicesSection() {
           className="mt-16 text-center"
         >
           <p className="text-[#6B6B6B] mb-6">
-            Besoin d&apos;un service personnalise ?
+            Besoin d&apos;un service personnalisé ?
           </p>
           <Link
             href="#contact"

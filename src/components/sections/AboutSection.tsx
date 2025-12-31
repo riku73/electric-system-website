@@ -86,7 +86,7 @@ export function AboutSection() {
             className="py-20 lg:py-28 lg:pl-16"
           >
             <span className="text-[#FF9502] font-medium tracking-wide uppercase text-sm mb-4 block">
-              Qui Sommes-Nous
+              Qui sommes-nous
             </span>
             <h2 className="text-4xl md:text-5xl font-bold leading-[1.1] mb-6">
               {content.about.title}

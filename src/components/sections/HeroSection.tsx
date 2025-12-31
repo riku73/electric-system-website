@@ -93,7 +93,7 @@ export function HeroSection() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#FF9502]" />
             </span>
             <span className="text-[#FF9502] font-medium tracking-wide uppercase text-sm">
-              Électricien Agréé au Luxembourg
+              Électricien agréé au Luxembourg
             </span>
           </motion.div>
 
@@ -102,7 +102,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight"
           >
-            Solutions <span className="text-gradient">Électriques</span> Complètes pour Particuliers et Pros
+            Solutions <span className="text-gradient">électriques</span> complètes pour particuliers et pros
           </motion.h1>
 
           {/* Subtitle */}
@@ -146,9 +146,9 @@ export function HeroSection() {
             className="flex flex-wrap gap-8"
           >
             {[
-              "Installation Certifiée",
-              "Devis Gratuit 24h",
-              "Garantie 2 Ans",
+              "Installation certifiée",
+              "Devis gratuit 24h",
+              "Garantie 2 ans",
             ].map((item) => (
               <div
                 key={item}
@@ -169,9 +169,9 @@ export function HeroSection() {
           className="hidden lg:flex absolute right-12 top-1/2 -translate-y-1/2 flex-col gap-8"
         >
           {[
-            { value: "500+", label: "Projets Réalisés" },
-            { value: "98%", label: "Clients Satisfaits" },
-            { value: "10+", label: "Ans d'Expérience" },
+            { value: "500+", label: "Projets réalisés" },
+            { value: "98%", label: "Clients satisfaits" },
+            { value: "10+", label: "Ans d'expérience" },
           ].map((stat, index) => (
             <div
               key={stat.label}
