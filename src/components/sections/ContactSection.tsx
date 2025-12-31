@@ -336,6 +336,20 @@ export function ContactSection() {
                   Appeler Maintenant
                 </a>
               </div>
+
+              {/* Google Map */}
+              <div className="mt-8 rounded-2xl overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2585.4677018757643!2d6.070527999999999!3d49.607786700000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47954bedb22689cb%3A0xc875d6a4b45682cd!2sElectric%20System%20S%C3%A0rl!5e0!3m2!1sen!2slu!4v1767198311791!5m2!1sen!2slu"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
