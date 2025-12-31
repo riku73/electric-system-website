@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Zap, Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { content } from "@/content/fr";
 import { motion } from "framer-motion";
 
@@ -19,16 +20,14 @@ export function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-4">
-            <Link href="#home" className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-              <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#FF9502] text-white">
-                <Zap className="w-5 h-5 sm:w-7 sm:h-7" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg sm:text-xl leading-tight">
-                  ELECTRIC SYSTEM
-                </span>
-                <span className="text-xs sm:text-sm text-white/50">Sarl</span>
-              </div>
+            <Link href="#home" className="inline-block mb-4 sm:mb-6">
+              <Image
+                src="https://static.wedo.lu/img/companies/170286/logo/1757514965689.png"
+                alt="ELECTRIC SYSTEM Logo"
+                width={160}
+                height={60}
+                className="h-12 sm:h-14 w-auto object-contain"
+              />
             </Link>
             <p className="text-white/60 leading-relaxed mb-4 sm:mb-6 max-w-sm text-sm sm:text-base">
               {content.footer.description}

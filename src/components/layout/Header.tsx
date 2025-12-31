@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Zap, Phone } from "lucide-react";
+import Image from "next/image";
+import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { content } from "@/content/fr";
@@ -44,25 +45,14 @@ export function Header() {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-3 group">
-            <div className={`flex items-center justify-center w-11 h-11 rounded-xl transition-colors duration-300 ${
-              isScrolled
-                ? "bg-[#FF9502] text-white"
-                : "bg-white/10 backdrop-blur-sm text-white border border-white/20"
-            }`}>
-              <Zap className="w-6 h-6" />
-            </div>
-            <div className="flex flex-col">
-              <span className={`font-bold text-lg leading-tight tracking-tight transition-colors duration-300 ${
-                isScrolled ? "text-[#0D0D0D]" : "text-white"
-              }`}>
-                ELECTRIC SYSTEM
-              </span>
-              <span className={`text-xs transition-colors duration-300 ${
-                isScrolled ? "text-[#6B6B6B]" : "text-white/60"
-              }`}>
-                Sarl
-              </span>
-            </div>
+            <Image
+              src="https://static.wedo.lu/img/companies/170286/logo/1757514965689.png"
+              alt="ELECTRIC SYSTEM Logo"
+              width={140}
+              height={50}
+              className="h-10 sm:h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -117,15 +107,13 @@ export function Header() {
               <div className="flex flex-col h-full p-8">
                 {/* Mobile Logo */}
                 <div className="flex items-center gap-3 mb-12">
-                  <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#FF9502] text-white">
-                    <Zap className="w-6 h-6" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-lg leading-tight text-white">
-                      ELECTRIC SYSTEM
-                    </span>
-                    <span className="text-xs text-white/60">Sarl</span>
-                  </div>
+                  <Image
+                    src="https://static.wedo.lu/img/companies/170286/logo/1757514965689.png"
+                    alt="ELECTRIC SYSTEM Logo"
+                    width={140}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                  />
                 </div>
 
                 {/* Mobile Nav Links */}

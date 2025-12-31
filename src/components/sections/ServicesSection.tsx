@@ -6,14 +6,14 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { content } from "@/content/fr";
 
-// Service images from Unsplash (equipment-focused, no people)
+// Service images from Unsplash
 const serviceImages: Record<string, string> = {
   photovoltaique: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop",
-  "borne-recharge": "https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?q=80&w=800&auto=format&fit=crop",
+  "borne-recharge": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=800&auto=format&fit=crop",
   "electricite-generale": "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?q=80&w=800&auto=format&fit=crop",
   domotique: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop",
-  securite: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=800&auto=format&fit=crop",
-  informatique: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
+  securite: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop",
+  informatique: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800&auto=format&fit=crop",
 };
 
 const containerVariants: Variants = {

@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "static.wedo.lu",
+        pathname: "/**",
+      },
     ],
   },
 };
