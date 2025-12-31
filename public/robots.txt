@@ -1,0 +1,7 @@
+# robots.txt for electric-system.lu
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://electric-system.lu/sitemap.xml

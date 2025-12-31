@@ -11,6 +11,49 @@ const getResend = () => {
   return new Resend(apiKey);
 };
 
+// XSS Protection: Escape HTML entities in user input
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;",
+  };
+  return text.replace(/[&<>"']/g, (m) => map[m]);
+}
+
+// Rate limiting: Track requests per IP
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT = 5; // requests
+const RATE_WINDOW = 60 * 1000; // 1 minute
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+
+  // Clean up old entries periodically
+  if (rateLimitMap.size > 1000) {
+    for (const [key, value] of rateLimitMap.entries()) {
+      if (now > value.resetTime) {
+        rateLimitMap.delete(key);
+      }
+    }
+  }
+
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_WINDOW });
+    return true;
+  }
+
+  if (record.count >= RATE_LIMIT) {
+    return false;
+  }
+
+  record.count++;
+  return true;
+}
+
 const serviceLabels: Record<string, string> = {
   photovoltaique: "Installation Photovoltaïque",
   "borne-recharge": "Bornes de Recharge VE",
@@ -23,6 +66,19 @@ const serviceLabels: Record<string, string> = {
 
 export async function POST(request: Request) {
   try {
+    // Rate limiting check
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0] ||
+      request.headers.get("x-real-ip") ||
+      "unknown";
+
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { error: "Trop de demandes. Veuillez réessayer dans une minute." },
+        { status: 429 }
+      );
+    }
+
     const resend = getResend();
 
     if (!resend) {
@@ -47,6 +103,12 @@ export async function POST(request: Request) {
 
     const { name, email, phone, service, message } = validationResult.data;
 
+    // Sanitize user inputs to prevent XSS
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safePhone = escapeHtml(phone);
+    const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
+
     // Send email to company
     const { error: companyEmailError } = await resend.emails.send({
       from: "ELECTRIC SYSTEM Website <noreply@electric-system.lu>",
@@ -70,15 +132,15 @@ export async function POST(request: Request) {
               <table style="width: 100%; border-collapse: collapse;">
                 <tr>
                   <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; width: 140px;">Nom:</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;">${name}</td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;">${safeName}</td>
                 </tr>
                 <tr>
                   <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold;">Email:</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="mailto:${email}" style="color: #FF9502;">${email}</a></td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="mailto:${safeEmail}" style="color: #FF9502;">${safeEmail}</a></td>
                 </tr>
                 <tr>
                   <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold;">Téléphone:</td>
-                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="tel:${phone}" style="color: #FF9502;">${phone}</a></td>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;"><a href="tel:${safePhone}" style="color: #FF9502;">${safePhone}</a></td>
                 </tr>
                 <tr>
                   <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold;">Service:</td>
@@ -88,7 +150,7 @@ export async function POST(request: Request) {
 
               <h2 style="color: #FF9502; font-size: 18px; margin-top: 20px;">Message</h2>
               <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #FF9502;">
-                ${message.replace(/\n/g, "<br>")}
+                ${safeMessage}
               </div>
             </div>
 
@@ -126,7 +188,7 @@ export async function POST(request: Request) {
             </div>
 
             <div style="background: #f9f9f9; padding: 20px; border-radius: 0 0 10px 10px;">
-              <p>Bonjour ${name},</p>
+              <p>Bonjour ${safeName},</p>
 
               <p>Nous avons bien reçu votre demande concernant: <strong>${serviceLabels[service]}</strong></p>
 
@@ -134,16 +196,16 @@ export async function POST(request: Request) {
 
               <div style="background: white; padding: 15px; border-radius: 8px; margin: 20px 0;">
                 <h3 style="color: #FF9502; margin-top: 0;">Récapitulatif de votre message:</h3>
-                <p style="color: #666;">${message.replace(/\n/g, "<br>")}</p>
+                <p style="color: #666;">${safeMessage}</p>
               </div>
 
-              <p>En attendant, n'hésitez pas à nous contacter directement:</p>
+              <p>En attendant, n&apos;hésitez pas à nous contacter directement:</p>
               <ul style="list-style: none; padding: 0;">
                 <li style="padding: 5px 0;">📞 <a href="tel:+352661224409" style="color: #FF9502;">+352 661 22 44 09</a></li>
                 <li style="padding: 5px 0;">📧 <a href="mailto:info@electric-system.lu" style="color: #FF9502;">info@electric-system.lu</a></li>
               </ul>
 
-              <p>Cordialement,<br><strong>L'équipe ELECTRIC SYSTEM</strong></p>
+              <p>Cordialement,<br><strong>L&apos;équipe ELECTRIC SYSTEM</strong></p>
             </div>
 
             <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
