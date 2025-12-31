@@ -50,10 +50,10 @@ export function TestimonialsSection() {
           <span className="text-[#FF9502] font-medium tracking-wide uppercase text-sm mb-4 block">
             Témoignages
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0D0D0D] leading-[1.1] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0D0D0D] leading-[1.1] mb-4">
             {content.testimonials.title}
           </h2>
-          <p className="text-xl text-[#6B6B6B] leading-relaxed">
+          <p className="text-lg sm:text-xl text-[#6B6B6B] leading-relaxed">
             {content.testimonials.subtitle}
           </p>
         </motion.div>
@@ -64,17 +64,17 @@ export function TestimonialsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
         >
           {content.testimonials.items.map((testimonial, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               className={`group relative ${
-                index === 1 ? "md:-translate-y-8" : ""
+                index === 1 ? "lg:-translate-y-8" : ""
               }`}
             >
-              <div className="relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-500 border border-[#E5E5E3] h-full">
+              <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-shadow duration-500 border border-[#E5E5E3] h-full">
                 {/* Quote icon */}
                 <div className="absolute -top-4 left-8 w-12 h-12 rounded-2xl bg-[#FF9502] flex items-center justify-center shadow-lg shadow-[#FF9502]/30">
                   <Quote className="w-5 h-5 text-white" />
@@ -91,14 +91,14 @@ export function TestimonialsSection() {
                 </div>
 
                 {/* Quote Text */}
-                <p className="text-[#0D0D0D] leading-relaxed mb-8 text-lg">
+                <p className="text-[#0D0D0D] leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-[#E5E5E3]">
+                <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-[#E5E5E3]">
                   {/* Avatar */}
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#FF9502] to-[#FFB340] flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#FF9502] to-[#FFB340] flex items-center justify-center text-white font-bold text-base sm:text-lg shrink-0">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
@@ -126,19 +126,19 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8"
         >
           {[
             { value: "500+", label: "Clients satisfaits" },
             { value: "98%", label: "Taux de satisfaction" },
             { value: "24h", label: "Temps de réponse" },
             { value: "2 ans", label: "Garantie incluse" },
-          ].map((stat, index) => (
+          ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#0D0D0D] mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0D0D0D] mb-1 sm:mb-2">
                 {stat.value}
               </div>
-              <div className="text-[#6B6B6B] text-sm">{stat.label}</div>
+              <div className="text-[#6B6B6B] text-xs sm:text-sm">{stat.label}</div>
             </div>
           ))}
         </motion.div>

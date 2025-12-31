@@ -56,16 +56,16 @@ export function ServicesSection() {
             <span className="text-[#FF9502] font-medium tracking-wide uppercase text-sm mb-4 block">
               Nos expertises
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0D0D0D] leading-[1.1] mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0D0D0D] leading-[1.1] mb-4">
               {content.services.title}
             </h2>
-            <p className="text-xl text-[#6B6B6B] leading-relaxed">
+            <p className="text-lg sm:text-xl text-[#6B6B6B] leading-relaxed">
               {content.services.subtitle}
             </p>
           </div>
           <Link
             href="#contact"
-            className="group flex items-center gap-2 text-[#0D0D0D] font-semibold hover:text-[#FF9502] transition-colors shrink-0"
+            className="hidden sm:flex group items-center gap-2 text-[#0D0D0D] font-semibold hover:text-[#FF9502] transition-colors shrink-0"
           >
             Voir tous les services
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -78,7 +78,7 @@ export function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {content.services.items.map((service, index) => {
             // Make first two cards larger on desktop
@@ -94,7 +94,7 @@ export function ServicesSection() {
               >
                 <Link href="#contact" className="block">
                   {/* Image Container */}
-                  <div className="relative h-64 md:h-72 overflow-hidden">
+                  <div className="relative h-48 sm:h-56 md:h-72 overflow-hidden">
                     <Image
                       src={serviceImages[service.id]}
                       alt={service.title}
@@ -119,11 +119,11 @@ export function ServicesSection() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-[#0D0D0D] mb-2 group-hover:text-[#FF9502] transition-colors">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#0D0D0D] mb-2 group-hover:text-[#FF9502] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-[#6B6B6B] leading-relaxed text-sm line-clamp-2">
+                    <p className="text-[#6B6B6B] leading-relaxed text-xs sm:text-sm line-clamp-2">
                       {service.description}
                     </p>
                   </div>
@@ -142,17 +142,17 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
+          className="mt-10 sm:mt-16 text-center"
         >
-          <p className="text-[#6B6B6B] mb-6">
+          <p className="text-[#6B6B6B] mb-4 sm:mb-6 text-sm sm:text-base">
             Besoin d&apos;un service personnalisé ?
           </p>
           <Link
             href="#contact"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D0D0D] text-white font-semibold rounded-full hover:bg-[#FF9502] transition-colors duration-300 group"
+            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#0D0D0D] text-white font-semibold rounded-full hover:bg-[#FF9502] transition-colors duration-300 group text-sm sm:text-base"
           >
             Demander un devis gratuit
-            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>
         </motion.div>
       </div>

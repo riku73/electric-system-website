@@ -88,22 +88,22 @@ export function AboutSection() {
             <span className="text-[#FF9502] font-medium tracking-wide uppercase text-sm mb-4 block">
               Qui sommes-nous
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold leading-[1.1] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] mb-4 sm:mb-6">
               {content.about.title}
             </h2>
-            <p className="text-xl text-white/60 mb-4">
+            <p className="text-lg sm:text-xl text-white/60 mb-4">
               {content.about.subtitle}
             </p>
 
             {/* Content paragraphs */}
-            <div className="space-y-4 text-white/70 leading-relaxed mb-10">
+            <div className="space-y-4 text-white/70 leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base">
               {content.about.content.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
 
             {/* Values Grid */}
-            <div className="grid grid-cols-2 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10">
               {content.about.values.map((value, index) => {
                 const Icon = iconMap[value.icon as keyof typeof iconMap];
                 return (
@@ -115,15 +115,15 @@ export function AboutSection() {
                     transition={{ duration: 0.4, delay: 0.1 * index }}
                     className="group"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#FF9502]/20 group-hover:border-[#FF9502]/30 transition-colors">
-                        <Icon className="w-5 h-5 text-[#FF9502]" />
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#FF9502]/20 group-hover:border-[#FF9502]/30 transition-colors">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF9502]" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-white mb-1">
+                        <h3 className="font-semibold text-white mb-1 text-sm sm:text-base">
                           {value.title}
                         </h3>
-                        <p className="text-sm text-white/50">
+                        <p className="text-xs sm:text-sm text-white/50">
                           {value.description}
                         </p>
                       </div>
@@ -136,10 +136,10 @@ export function AboutSection() {
             {/* CTA */}
             <Link
               href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF9502] text-white font-semibold rounded-full hover:bg-[#E68600] shadow-lg shadow-[#FF9502]/25 hover:shadow-xl hover:shadow-[#FF9502]/30 transition-all duration-300 group"
+              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#FF9502] text-white font-semibold rounded-full hover:bg-[#E68600] shadow-lg shadow-[#FF9502]/25 hover:shadow-xl hover:shadow-[#FF9502]/30 transition-all duration-300 group text-sm sm:text-base"
             >
               Parlons de votre projet
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             {/* Certifications */}

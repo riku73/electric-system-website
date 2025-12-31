@@ -56,39 +56,41 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="relative overflow-hidden">
-      {/* Background Image Section */}
+      {/* Background Image Section - Full on mobile, half on desktop */}
       <div className="absolute inset-0 lg:w-1/2 lg:left-1/2">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
           alt="Modern office"
           fill
           className="object-cover"
-          sizes="50vw"
+          sizes="(max-width: 1024px) 100vw, 50vw"
         />
-        <div className="absolute inset-0 bg-[#0D0D0D]/60" />
+        <div className="absolute inset-0 bg-[#0D0D0D]/80 lg:bg-[#0D0D0D]/60" />
       </div>
 
       <div className="container-padding mx-auto max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[800px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] lg:min-h-[800px]">
           {/* Left Column - Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-[#FAFAF8] py-20 lg:py-28 lg:pr-16"
+            className="bg-[#FAFAF8] py-12 sm:py-16 lg:py-28 px-1 sm:px-0 lg:pr-16 rounded-2xl lg:rounded-none mx-[-20px] sm:mx-0 lg:mx-0 mt-4 lg:mt-0"
           >
-            <span className="text-[#FF9502] font-medium tracking-wide uppercase text-sm mb-4 block">
-              Contact
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0D0D0D] leading-[1.1] mb-4">
-              {content.contact.title}
-            </h2>
-            <p className="text-xl text-[#6B6B6B] mb-10">
-              {content.contact.subtitle}
-            </p>
+            <div className="px-5 sm:px-8 lg:px-0">
+              <span className="text-[#FF9502] font-medium tracking-wide uppercase text-sm mb-4 block">
+                Contact
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0D0D0D] leading-[1.1] mb-4">
+                {content.contact.title}
+              </h2>
+              <p className="text-lg sm:text-xl text-[#6B6B6B] mb-8 sm:mb-10">
+                {content.contact.subtitle}
+              </p>
+            </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 sm:space-y-6 px-5 sm:px-8 lg:px-0">
               {/* Name & Email Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -256,9 +258,9 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative py-20 lg:py-28 lg:pl-16 text-white"
+            className="relative py-12 sm:py-16 lg:py-28 lg:pl-16 text-white"
           >
-            <div className="lg:max-w-md">
+            <div className="lg:max-w-md px-1 sm:px-0">
               <h3 className="text-2xl font-bold mb-8">
                 {content.contact.info.title}
               </h3>

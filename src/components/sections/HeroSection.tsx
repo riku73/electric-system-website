@@ -100,7 +100,7 @@ export function HeroSection() {
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight"
           >
             Solutions <span className="text-gradient">électriques</span> complètes pour particuliers et pros
           </motion.h1>
@@ -108,7 +108,7 @@ export function HeroSection() {
           {/* Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-white/70 max-w-2xl mb-10 leading-relaxed font-light"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl mb-8 sm:mb-10 leading-relaxed font-light"
           >
             {content.hero.subtitle}
           </motion.p>
@@ -143,7 +143,7 @@ export function HeroSection() {
           {/* Trust Badges */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap gap-8"
+            className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8"
           >
             {[
               "Installation certifiée",
@@ -154,8 +154,8 @@ export function HeroSection() {
                 key={item}
                 className="flex items-center gap-2 text-white/60"
               >
-                <CheckCircle2 className="w-5 h-5 text-[#FF9502]" />
-                <span className="text-sm font-medium">{item}</span>
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF9502]" />
+                <span className="text-xs sm:text-sm font-medium">{item}</span>
               </div>
             ))}
           </motion.div>
