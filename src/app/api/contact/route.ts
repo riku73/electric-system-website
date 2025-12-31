@@ -2,7 +2,14 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/schemas/contact";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only when API key is available (not during build)
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey || apiKey === "re_xxxxxxxxxxxx") {
+    return null;
+  }
+  return new Resend(apiKey);
+};
 
 const serviceLabels: Record<string, string> = {
   photovoltaique: "Installation Photovoltaïque",
@@ -16,6 +23,16 @@ const serviceLabels: Record<string, string> = {
 
 export async function POST(request: Request) {
   try {
+    const resend = getResend();
+
+    if (!resend) {
+      console.error("Resend API key not configured");
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 500 }
+      );
+    }
+
     const body = await request.json();
 
     // Validate the request body
