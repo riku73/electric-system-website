@@ -22,8 +22,8 @@ export function AboutSection() {
       {/* Full-bleed Image - positioned absolutely on desktop */}
       <div className="absolute inset-y-0 left-0 w-1/2 hidden lg:block">
         <Image
-          src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?q=80&w=1200&auto=format&fit=crop"
-          alt="Tableau électrique professionnel"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+          alt="Bureau moderne avec installation électrique"
           fill
           className="object-cover"
           sizes="50vw"
@@ -49,8 +49,8 @@ export function AboutSection() {
       {/* Mobile Image */}
       <div className="relative h-[400px] lg:hidden">
         <Image
-          src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?q=80&w=1200&auto=format&fit=crop"
-          alt="Tableau électrique professionnel"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+          alt="Bureau moderne avec installation électrique"
           fill
           className="object-cover"
           sizes="100vw"
