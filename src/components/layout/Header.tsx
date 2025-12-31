@@ -48,9 +48,9 @@ export function Header() {
             <Image
               src="https://static.wedo.lu/img/companies/170286/logo/1757514965689.png"
               alt="ELECTRIC SYSTEM Logo"
-              width={140}
-              height={50}
-              className="h-10 sm:h-12 w-auto object-contain"
+              width={180}
+              height={65}
+              className="h-14 sm:h-16 w-auto object-contain"
               priority
             />
           </Link>
@@ -110,9 +110,9 @@ export function Header() {
                   <Image
                     src="https://static.wedo.lu/img/companies/170286/logo/1757514965689.png"
                     alt="ELECTRIC SYSTEM Logo"
-                    width={140}
-                    height={50}
-                    className="h-10 w-auto object-contain"
+                    width={180}
+                    height={65}
+                    className="h-14 w-auto object-contain"
                   />
                 </div>
 

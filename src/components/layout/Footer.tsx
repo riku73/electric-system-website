@@ -24,9 +24,9 @@ export function Footer() {
               <Image
                 src="https://static.wedo.lu/img/companies/170286/logo/1757514965689.png"
                 alt="ELECTRIC SYSTEM Logo"
-                width={160}
-                height={60}
-                className="h-12 sm:h-14 w-auto object-contain"
+                width={200}
+                height={70}
+                className="h-16 sm:h-20 w-auto object-contain"
               />
             </Link>
             <p className="text-white/60 leading-relaxed mb-4 sm:mb-6 max-w-sm text-sm sm:text-base">
